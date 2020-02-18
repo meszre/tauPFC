@@ -1,0 +1,23 @@
+Package: tauPFC
+Type: Package
+Title: Computes robust estimators for the PFC model
+Version: 0.0.1
+Authors: c(person("Andrea", "Bergesio", email = "anbergesio@gmail.com",role = c("aut","cre")),
+    person("Maria Eugenia", "Szretter Noste", email = "meszre@dm.uba.ar",role = c("aut", "cre")),
+    person("Victor J.", "Yohai", email = "vyohai@dm.uba.ar",role = "aut"))
+Description: Computes tau-type estimators for the Principal Fitted Components 
+    model and also for reduced rank regression model. Fits multivariate linear
+    models, by both robust and maximum likelihood estimators. Performs selection 
+    of dimension for sufficient dimension reduction via cross-validation.
+Imports:
+    graphics,
+    MASS,
+    plotrix,
+    robust,
+    rrcov,
+    stats
+Suggests:
+    rrr
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
