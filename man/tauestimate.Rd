@@ -1,22 +1,16 @@
 \name{tauestimate}
 \alias{tauestimate}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{Tau estimate for the Principal Fitted Components Model (PFC)
-%%  ~~functieon to do ... ~~
 }
 \description{Computes the tau estimators for the PFC model
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
 tauestimate(X, Fy, d, aux, inic)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{X}{vector of response variables in the inverse model, {\eqn{n x p}} matrix, each row is a response vector
-%%     ~~Describe \code{x} here~~
 }
 \item{Fy}{vector of covariates in the inverse problem, vector containing functions of the response variable in the original multiple regression problem. Is a {\eqn{n x r}} matrix, each row is the corresponding response vector
-%%
 }
 
 
@@ -24,10 +18,8 @@ tauestimate(X, Fy, d, aux, inic)
 %%
 }
   \item{aux}{list containing the constants for the tau-scale
-%%     ~~Describe \code{aux} here~~
 }
   \item{inic}{list containing initial estimators for the coefficient matrix and the covariance matrix
-%%     ~~Describe \code{inic} here~~
 }
 }
 \details{We consider the Principal Fitted  Components (PFC) model given by
@@ -46,34 +38,18 @@ and the unknown parameters (to be estimated) are
 Both coefficient matrices \eqn{\Gamma} and \eqn{\beta} are not unique, but their product \emph{p x r} matrix is unique, with rank \code{d} \eqn{\le min(p,r)}. The notation refers to Cook and Forzani (2008).}
 
 \value{List with the following components
-%%  ~Describe the value returned
-%%  If it is a LIST, use
 \item{mu }{tau-estimator for the term \eqn{\mu} in the PFC model}
 \item{beta }{tau-estimator for the parameter \eqn{\beta} in the PFC model}
 \item{gamma }{tau-estimator for the parameter \eqn{\Gamma} in the PFC model}
 \item{delta}{tau-estimator for the covariance matrix \eqn{\Delta} in the PFC model}
-%\item{sm}{M-estimator for the scale of the Mahalanobis distances}
-%% ...
 }
 \references{Bergesio, A., Szretter Noste, M. E. and Yohai, V. J. (2020). A robust proposal of estimation for the
-sufficient reduction problem
+sufficient dimension reduction problem
 
 Cook, R. D. and Forzani, L. (2008). Principal Fitted components for dimension reduction in
 regression. Statistical Science, 23(4):485-501.
-%% ~put references to the literature/web site here ~
-}
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 
 p=10
@@ -93,7 +69,4 @@ inic=initial(X,Fy,aux,efficiency=0.85)
 tauestimate(X,Fy,d=1,aux,inic)
 
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+

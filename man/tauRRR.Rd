@@ -1,19 +1,14 @@
 \name{tauRRR}
 \alias{tauRRR}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{Tau estimate for Reduced Rank Regression
-%%  ~~functieon to do ... ~~
 }
 \description{Fits a reduced-rank regression (RRR) model (for a description, see Izenman(2008)) with a robust procedure that can resist the presence of outliers. It computes tau type estimates, see Bergesio et al. (2020). It fits also a multivariate linear model (MLM) without rank restriction if the rank is chosen properly.
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
 tauRRR(yy, XX, d, efficiency = 0.90)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{yy}{vector of response variables, {\eqn{n x p}} matrix, each row is a response vector
-%%     ~~Describe \code{x} here~~
 }
 \item{XX}{vector of covariates in the multivariate regression problem. Is a {\eqn{n x r}} matrix, each row is the corresponding covariate vector}
 
@@ -50,21 +45,9 @@ Both coefficient matrices \emph{A} and \emph{B} are not unique, but their produc
 Izenman, A. J. (2008). Modern multivariate statistical techniques. {\emph{Regression, classification and manifold learning}}, New York: Springer.
 
 Bergesio, A., Szretter Noste, M. E. and Yohai, V. J. (2020). A robust proposal of estimation for the
-sufficient reduction problem
+sufficient dimension reduction problem
 }
 
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 
 # We work with Example 6.3.3, Chemical Composition of Tobacco, from

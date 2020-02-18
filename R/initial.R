@@ -35,12 +35,23 @@ initial=function(X,Fy,aux,efficiency=0.85)
 }
 
 
-
+#' computes the difference between the mean of rhoc values and 0.5
+#'
+#' @param c1 constant for rho_1 function
+#' @param u vector of distances (positive numbers)
+#' @param s real positive number, the s-cale of distances
+#' @NoRd
 h=function(s,u,c1){mean(rhoc(u/s,c1))-.5 }
 
+#' computes Mscale using Newton Raphson
+#'
+#' @param c1 constant for rho_1 function
+#' @param k1 constant for rho_1 function
+#' @param u vector of distances (positive numbers)
+#' @NoRd
 MscaleNR<-function(u,c1,k1){
   sn=stats::median(abs(u))/.6745
-  while (tauPFC::h(sn,abs(u),c1)>0){sn=1.5*sn}
+  while (h(sn,abs(u),c1)>0){sn=1.5*sn}
   i<-0
   err <- 1
   while  (( i < 1000 ) & (err > 1e-5)) {

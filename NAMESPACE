@@ -1,1 +1,13 @@
 exportPattern("^[[:alpha:]]+")
+export(angle_AB)
+export(cross_val_pfc)
+export(generate)
+export(initial)
+export(kappa_and_c)
+export(MLE)
+export(psic)
+export(psicprime)
+export(rhoc)
+export(tauestimate)
+export(tauRRR)
+

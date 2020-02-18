@@ -1,24 +1,18 @@
 \name{MLE}
 \alias{MLE}
-%- Also NEED an '\alias' for EACH other topic documented here.
-\title{Maximum likelihood estimators for the Principal Fitted Components (PFC) Model
-%%  ~~function to do ... ~~
-}
+
+\title{Maximum likelihood estimators for the Principal Fitted Components (PFC) Model}
 \description{Computes the ML estimators for the PFC model
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
 MLE(X,Fy,d)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
 \item{X}{vector of response variables in the inverse model, {\eqn{n x p}} matrix, each row is a response vector}
 \item{Fy}{vector of covariates in the inverse problem, vector containing functions of the response variable in the original multiple regression problem. Is a {\eqn{n x r}} matrix, each row is the corresponding response vector
-%%
 }
 
 \item{d}{number indicating the reduction subspace dimension
-%%
 }
 }
 \details{We consider the Principal Fitted  Components (PFC) model given by
@@ -38,30 +32,14 @@ Both coefficient matrices \eqn{\Gamma} and \eqn{\beta} are not unique, but their
 
 \value{
 List with the following components
-%%  ~Describe the value returned
-%%  If it is a LIST, use
 \item{mu }{MLE estimation of the term \eqn{\mu} in the PFC model}
 \item{beta }{MLE estimation of the parameter \eqn{\beta} in the PFC model}
 \item{gamma }{MLE estimation of the parameter \eqn{\Gamma} in the PFC model}
 \item{delta}{MLE estimation of the covariance matrix \eqn{\Delta} in the PFC model}
-%% ...
 }
 \references{
 Cook, R. D. and Forzani, L. (2008). Principal Fitted components for dimension reduction in
 regression. Statistical Science, 23(4):485-501.
-%% ~put references to the literature/web site here ~
-}
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
 p=10
@@ -76,7 +54,3 @@ X=data_sim$X
 MLE(X,Fy,d=1)
 
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

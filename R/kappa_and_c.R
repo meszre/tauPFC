@@ -34,7 +34,7 @@ while ((ff(x1,p)*ff(x2,p)>0)&(x2<=5*p))
 inicialc1=x1
 finalc1=x2
 ################################################
-c1=uniroot(ff,c(inicialc1,finalc1),p=p)$root
+c1=stats::uniroot(ff,c(inicialc1,finalc1),p=p)$root
 k1<-stats::integrate(integrand,0,Inf,c1=c1,p=p)$value
 
 

@@ -1,4 +1,4 @@
-cross_val_pfc=function(X,fy,dmax,aux,grafico)
+cross_val_pfc=function(X,Fy,dmax,aux,grafico = TRUE)
 {
 # five fold cross validation for pfc model, to estimate d,
 # the dimension of the reduction subspace, using both maximum likelihood
@@ -8,16 +8,16 @@ cross_val_pfc=function(X,fy,dmax,aux,grafico)
 
 n=dim(X)[1]
 p=dim(X)[2]
-r=dim(fy)[2]
+r=dim(Fy)[2]
 
 c1=aux$c1
 c2=aux$c2
 k1=aux$k1
 k2=aux$k2
 
-# X and fy has the observations by row, dim(X)[1] should be equal to dim(fy)[1]
+# X and Fy has the observations by row, dim(X)[1] should be equal to dim(Fy)[1]
 
-if ( dim(X)[1] != dim(fy)[1]) stop ("dim(X)[1] should be equal to dim(fy)[1], each row should be an observation")
+if ( dim(X)[1] != dim(Fy)[1]) stop ("dim(X)[1] should be equal to dim(Fy)[1], each row should be an observation")
 
 n_parte=floor(n/5)
 
@@ -103,15 +103,15 @@ for(j in 1:5)
 
   # we compute the initial robust estimate
 
-  inic=initial(X[training,],fy[training,],aux,efficiency=0.85)
+  inic=initial(X[training,],Fy[training,],aux,efficiency=0.85)
   for (d in 1:dmax){
 
       # we now estimate the parameters
       # maximum likelihood
-      lme=MLE(X[training,],fy[training,],d)
+      lme=MLE(X[training,],Fy[training,],d)
 
       # robust tau
-      tau_aux=tauestimate(X[training,],fy[training,],d,aux,inic)
+      tau_aux=tauestimate(X[training,],Fy[training,],d,aux,inic)
 
 
       # the indices of 1/5 of the sample that is used to validate is kept in "validating"
@@ -119,14 +119,14 @@ for(j in 1:5)
       # and we compute both objective functiones (max lik and robust) in the validation sample
 
       #maximum likelihood method
-      resiMV<-t(X[validating,])-matrix(rep(lme$mu,length(validating)),nrow=p, ncol=length(validating))-lme$gamma%*%lme$beta%*%t(fy[validating,])
+      resiMV<-t(X[validating,])-matrix(rep(lme$mu,length(validating)),nrow=p, ncol=length(validating))-lme$gamma%*%lme$beta%*%t(Fy[validating,])
       dismvfold<-sqrt(diag(t(resiMV)%*%solve(lme$delta)%*%resiMV))
       objetivos.mv[j,d]=mean(dismvfold^2)+log(det(lme$delta))
 
 
 
       #robust tau method
-      resirob<-t(X[validating,])-matrix(rep(tau_aux$mu,length(validating)),nrow=p, ncol=length(validating))-tau_aux$gamma%*%tau_aux$beta%*%t(fy[validating,])
+      resirob<-t(X[validating,])-matrix(rep(tau_aux$mu,length(validating)),nrow=p, ncol=length(validating))-tau_aux$gamma%*%tau_aux$beta%*%t(Fy[validating,])
       distaufold<-sqrt(diag(t(resirob)%*%solve(tau_aux$delta)%*%resirob))
 
       sfold=MscaleNR(distaufold,c1,k1)$s
@@ -152,8 +152,8 @@ for (d in 1:(dmax+1)){
   funcion.FiB[d] = mean(objetivos.rob[1:5,d])
 
   # sd computations, by tibshirani
-  obj.mv.sd[d]<-sd(objetivos.mv[1:5,d])/sqrt(5)
-  funcion.FiB.sd[d]<-sd(objetivos.rob[1:5,d])/sqrt(5)
+  obj.mv.sd[d]<-stats::sd(objetivos.mv[1:5,d])/sqrt(5)
+  funcion.FiB.sd[d]<-stats::sd(objetivos.rob[1:5,d])/sqrt(5)
 
 }
 
@@ -251,6 +251,14 @@ list(d.crossval.ml=d.crossval.mv,obj.ml=obj.mv[c((dmax+1),1:dmax)],obj.ml.sd=obj
 ##########################################################################################################
 ##########################################################################################################
 
+
+#' computes initial value of the coefficients, beta0, and
+#' the S robust covariance as initial value of the covariance matrix delta=
+#'
+#' @param X data matrix
+#' @param aux constanst for both rho functions
+#' @param efficiency optionally the efficiency of the univariate estimate
+#' @NoRd
 initial_d0=function(X,aux,efficiency=0.85)
 { # INPUT
   # data matrix X
@@ -290,6 +298,12 @@ initial_d0=function(X,aux,efficiency=0.85)
 }
 
 ###############################################################################
+#' computes initial tau estimates without covariables (d=0) for mu (center) and delta (dispersion)
+#'
+#' @param X data matrix
+#' @param aux constanst for both rho functions
+#' @param inic initial beta0 and delta0 from initial_d0 routine
+#' @NoRd
 tauestimate_d0=function(X,aux,inic)
 {
   n=dim(X)[1]

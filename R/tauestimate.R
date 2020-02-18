@@ -131,6 +131,14 @@ tauestimate=function(X,Fy,d,aux,inic)
 
 
 #################################################################
+#' computes weights for the algorithm
+#'
+#' @param dys vector of distances
+#' @param s real positive number, the s-cale of distances
+#' @param p dimension of ambient space
+#' @param c1 constant for rho_1 function
+#' @param c2 constant for rho_2 function
+#' @NoRd
 weights2=function(dys,s,p,c1,c2)
 {
   a=2*rhoc(dys,c2)-psic(dys,c2)*dys
@@ -143,16 +151,28 @@ weights2=function(dys,s,p,c1,c2)
 }
 
 
+#' computes phi1 function, internally used to compute the weights for the algorithm
+#'
+#' @param delta positive definite p x p matrix, the estimated covariance of errors
+#' @param c2 constant for rho_2 function
+#' @param k2 constant for rho_2 function
+#' @param ese real positive number, the s-cale of distances
+#' @param dis vector of distances
+#' @param p dimension of ambient space
+#' @NoRd
 phi1=function(delta,c2,k2,ese,dis,p)
 {
   det(delta)*(mean(rhoc(dis/ese,c2))*ese^2)^p
-
 }
 
 
+#' computes the principal square root of the matrix A
+#'
+#' @param A positive (semi) definite p x p matrix
+#' @NoRd
 sqrtm2=function(A)
 {
-  # X = sqrtm2(A) is the principal square root of the matrix A, i.e. X%*%X = A
+  # X = sqrtm2(A) is the principal square root of the matrix A, i.e. X\%*\%X = A
   descoA<-eigen(A,symmetric= TRUE)
   descoA$vectors%*%diag(sqrt(descoA$values))%*%t(descoA$vectors)
   #------------
