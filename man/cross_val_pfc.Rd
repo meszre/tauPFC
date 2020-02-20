@@ -51,5 +51,5 @@ Fy=data_sim$Fy
 X=data_sim$X
 
 aux=kappa_and_c(p,efficiency=.9)
-cross_val_pfc(X, Fy, dmax=4, aux, grafico=TRUE)
+cross_val_pfc(X, Fy, dmax=3, aux, grafico=TRUE)
 }
