@@ -1,8 +1,8 @@
 Package: tauPFC
 Type: Package
-Title: Computes robust estimators for the PFC model
+Title: Computes Robust Estimators for the PFC Model
 Version: 0.0.1
-Author: c(person("Andrea", "Bergesio", email = "anbergesio@gmail.com",role = c("aut","cre")),
+Authors@R: c(person("Andrea", "Bergesio", email = "anbergesio@gmail.com",role = c("aut","cre")),
     person("Maria Eugenia", "Szretter Noste", email = "meszre@dm.uba.ar",role = c("aut", "cre")),
     person("Victor J.", "Yohai", email = "vyohai@dm.uba.ar",role = "aut"))
 Maintainer: Maria Eugenia Szretter Noste <meszre@dm.uba.ar>
