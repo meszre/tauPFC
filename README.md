@@ -23,3 +23,4 @@ You can install pkgreviewr from GitHub with:
 # install.packages("devtools") 
 devtools::install_github("meszre/tauPFC")
 ```
+Homepage https://meszre.github.io/tauPFC/
