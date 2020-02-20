@@ -1,18 +1,11 @@
 \name{psic}
 \alias{psic}
-\title{First derivative of the quasi-optimal rho function
-}
-\description{
-psic computes the first derivative of the \eqn{\rho} quasi-optimal function defined in the references
-}
-\usage{
-psic(x, c)
-}
+\title{First derivative of the quasi-optimal rho function}
+\description{psic computes the first derivative of the \eqn{\rho} quasi-optimal function defined in the references}
+\usage{psic(x, c)}
 \arguments{
-  \item{x}{value where the psic function is evaluated
-}
-  \item{c}{tuning parameter, it defines where the \eqn{\rho} quasi-optimal function starts to be constant
-}
+  \item{x}{value where the psic function is evaluated}
+  \item{c}{tuning parameter, it defines where the \eqn{\rho} quasi-optimal function starts to be constant}
 }
 \references{
 Muler,  N. and Yohai,  V. J. (2002). Robust estimates for arch processes.
