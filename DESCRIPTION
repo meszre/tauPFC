@@ -13,10 +13,6 @@ Imports:
     graphics,
     MASS,
     plotrix,
-<<<<<<< HEAD
-=======
-    robust,
->>>>>>> c41af9b709b89daf3885b47c4a1227a44514c73c
     robustbase,
     rrcov,
     stats
