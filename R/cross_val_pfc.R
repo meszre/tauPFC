@@ -280,7 +280,7 @@ initial_d0=function(X,aux,efficiency=0.85)
   BETA=matrix(nrow=p,ncol=1)
   for (kkk in 1:p){
 
-    BETA[kkk,]=robust::lmRob(X[,kkk]~1,control =robust::lmRob.control(efficiency = 0.85))$coefficients
+    BETA[kkk,]=robustbase::lmrob(X[,kkk]~1,control =robustbase::lmrob.control(efficiency = 0.85))$coefficients
   }
   aux2=X-matrix(rep(t(BETA),n),nrow=n,ncol=p,byrow=TRUE)
 
