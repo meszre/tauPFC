@@ -13,7 +13,7 @@ Imports:
     graphics,
     MASS,
     plotrix,
-    robust,
+    robustbase,
     rrcov,
     stats
 Suggests:

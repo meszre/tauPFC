@@ -8,16 +8,10 @@ initial=function(X,Fy,aux,efficiency=0.85)
   k1=aux$k1
   k2=aux$k2
   options(warn = -1)
-  #library(robust)
-  #library(rrcov)
-# if (!requireNamespace("robust", quietly = TRUE)) {
-#  stop("Package \"robust\" needed for this function to work. Please install it.",
-#         call. = FALSE)
-#  }
 
   BETA=matrix(nrow=p,ncol=r+1)
   for (kkk in 1:p){
-    BETA[kkk,]=robust::lmRob(X[,kkk]~Fy,control = robust::lmRob.control(efficiency = efficiency))$coefficients  ## library(robust)
+    BETA[kkk,]=robustbase::lmrob(X[,kkk]~Fy,control = robustbase::lmrob.control(efficiency = efficiency))$coefficients  ## library(robust)
   }
   res=X-cbind(rep(1,n),Fy)%*%t(BETA)
   A=rrcov::CovSest(res,method="bisquare")  #library(rrcov)

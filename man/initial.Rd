@@ -20,8 +20,8 @@ initial(X, Fy, aux, efficiency = 0.85)
   \item{efficiency}{required efficiency for initial robust estimator
 }
 }
-\details{This function computes the coefficient matrix concatenating the coefficients resulting from the fitting of univariate regressions using a robust estimator with high breakdown point and high efficiency (require "robust"). Univariate estimators are computed using  %\href{robust::lmRob.Rd}{lmRob}
-\code{\link[robust]{lmRob}}
+\details{This function computes the coefficient matrix concatenating the coefficients resulting from the fitting of univariate regressions using a robust estimator with high breakdown point and high efficiency (require "robustbase"). Univariate estimators are computed using  %\href{robust::lmRob.Rd}{lmRob}
+\code{\link[robustbase]{lmrob}}
 "lmRob" function. It computes a robust estimator of errors covariance matrix (require "rrcov").
 }
 \value{
