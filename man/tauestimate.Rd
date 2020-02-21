@@ -23,7 +23,7 @@ tauestimate(X, Fy, d, aux, inic)
 }
 }
 \details{We consider the Principal Fitted  Components (PFC) model given by
-\eqn{X = \mu + \Gamma\betaf(y) +\Delta}\out{<sup>1/2</sup>}\eqn{\epsilon}
+\eqn{X = \mu + \Gamma\beta f(y) +\Delta}\out{<sup>1/2</sup>}\eqn{\epsilon}
 where the variables are
 \itemize{
 \item{} \eqn{y} is an observed response variable of the original model. \eqn{f} is a known vector valued function, that takes values in R\out{<sup>r</sup>}
