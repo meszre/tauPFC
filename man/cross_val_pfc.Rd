@@ -29,7 +29,7 @@ one standard deviation rule from the minimum. See Hastie et al. (2009)}
 \item{obj.ml.sd}{standard deviation of the objective function for the ML estimator, for values of d between 0 and \code{dmax}}
 \item{d.crossval.rob}{dimension selected by cross-validation using tau estimator}
 \item{obj.rob}{objective function values for the robust estimator}
-\item{obj.rob.sd}{standard deviation of the objective funcion for the robust estimator}
+\item{obj.rob.sd}{standard deviation of the objective function for the robust estimator}
 ...
 }
 \references{
