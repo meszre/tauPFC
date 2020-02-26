@@ -39,7 +39,7 @@ Bergesio, A., Szretter Noste, M. E. and Yohai, V. J. (2020). A robust proposal o
 sufficient dimension reduction problem}
 
 \examples{
-p=10
+p=5
 r=2
 n=200
 mutrue=rep(0,p)
