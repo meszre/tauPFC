@@ -3,7 +3,7 @@
 
 \title{Constants for tau-scale estimator}
 \description{This function computes the constants to define the rho-functions (in the rho quasi-optimal family) and expectations in order to obtain high efficiency and the maximum possible breakdown point (0.5).
-The values are obtained by solving the equations that relate the rho-functions with these characteristics of robustnes}
+The values are obtained by solving the equations that relate the rho-functions with these characteristics of robustness}
 \usage{kappa_and_c(p, efficiency)}
 \arguments{
   \item{p}{dimension of the vector of the response variable}
@@ -15,8 +15,8 @@ For more details about the way the constants are chosen, see Bergesio et al. (20
 The result is returned as a list containing
  \item{c1}{ tuning parameter such that {\eqn{\rho}}{\out{<sub>1</sub>}}  is strictly increasing in {\out{[0; c<sub>1</sub>]}} and constant for values greater than {\out{ c<sub>1</sub>}}.}
   \item{c2}{ tuning parameter such that {\eqn{\rho}}{\out{<sub>2</sub>}} is strictly increasing in {\out{[0; c<sub>2</sub>]}} and constant for values greater than {\out{ c<sub>2</sub>}}.}
- \item{k1}{ constant value involved in the {\eqn{\rho}}{\out{<sub>1</sub>}} expectaction.}
- \item{k2}{ constant value involved in the {\eqn{\rho}}{\out{<sub>2</sub>}} expectaction.}
+ \item{k1}{ constant value involved in the {\eqn{\rho}}{\out{<sub>1</sub>}} expectation.}
+ \item{k2}{ constant value involved in the {\eqn{\rho}}{\out{<sub>2</sub>}} expectation.}
  }
 
 \references{

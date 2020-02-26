@@ -256,7 +256,7 @@ list(d.crossval.ml=d.crossval.mv,obj.ml=obj.mv[c((dmax+1),1:dmax)],obj.ml.sd=obj
 #' the S robust covariance as initial value of the covariance matrix delta=
 #'
 #' @param X data matrix
-#' @param aux constanst for both rho functions
+#' @param aux constant for both rho functions
 #' @param efficiency optionally the efficiency of the univariate estimate
 #' @NoRd
 initial_d0=function(X,aux,efficiency=0.85)
@@ -301,7 +301,7 @@ initial_d0=function(X,aux,efficiency=0.85)
 #' computes initial tau estimates without covariables (d=0) for mu (center) and delta (dispersion)
 #'
 #' @param X data matrix
-#' @param aux constanst for both rho functions
+#' @param aux constant for both rho functions
 #' @param inic initial beta0 and delta0 from initial_d0 routine
 #' @NoRd
 tauestimate_d0=function(X,aux,inic)

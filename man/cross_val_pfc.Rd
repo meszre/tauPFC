@@ -9,7 +9,7 @@ cross_val_pfc(X, Fy, dmax, aux, grafico = TRUE)
 
 \arguments{
  \item{X}{vector of response variables in the inverse model}
-\item{Fy}{vector of covariates in the inverse problem, vector containig functions of the response variable in the original problem}
+\item{Fy}{vector of covariates in the inverse problem, vector containing functions of the response variable in the original problem}
   \item{dmax}{maximum value of the dimension to be evaluated}
   \item{aux}{list containing the constants for the tau-scale}
 
@@ -28,12 +28,12 @@ one standard deviation rule from the minimum. See Hastie et al. (2009)}
 \item{obj.ml}{objective function values for the ML estimator, for values of d between 0 and \code{dmax}}
 \item{obj.ml.sd}{standard deviation of the objective function for the ML estimator, for values of d between 0 and \code{dmax}}
 \item{d.crossval.rob}{dimension selected by cross-validation using tau estimator}
-\item{obj.rob}{objective funcion values for the robust estimator}
+\item{obj.rob}{objective function values for the robust estimator}
 \item{obj.rob.sd}{standard deviation of the objective funcion for the robust estimator}
 ...
 }
 \references{
-Hastie, T., Tibshirani, R., Friedman, J. H. (2009). The elements of statistical learning: data mining, inference, and prediction. 2nd ed. New York: Springer.
+Hastie, T., Tibshirani, R., Friedman, J. H. (2009). The elements of statistical learning: data mining, inference, and prediction. 2nd. ed. New York: Springer.
 
 Bergesio, A., Szretter Noste, M. E. and Yohai, V. J. (2020). A robust proposal of estimation for the
 sufficient dimension reduction problem}

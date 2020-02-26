@@ -27,7 +27,7 @@ and the unknown parameters (to be estimated) are
 \item \eqn{\mu} a \emph{p x 1} vector of intercepts
 \item{} \eqn{\Gamma} is a full-rank \emph{p x d} matrix whose columns span the dimension reduction subspace
 \item{} \eqn{\beta} is a full-rank \emph{d x r} matrix
-\item{} cov({\eqn{\epsilon}}) = \eqn{\Delta}, is a \emph{p x p} positive definite  matrix }
+\item{} cov(\eqn{\epsilon}) = \eqn{\Delta}, is a \emph{p x p} positive definite  matrix }
 Both coefficient matrices \eqn{\Gamma} and \eqn{\beta} are not unique, but their product \emph{p x r} matrix is unique, with rank \code{d} \eqn{\le min(p,r)}. The notation refers to Cook and Forzani (2008).}
 
 \value{
