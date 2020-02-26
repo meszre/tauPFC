@@ -134,7 +134,7 @@ tauestimate=function(X,Fy,d,aux,inic)
 #' computes weights for the algorithm
 #'
 #' @param dys vector of distances
-#' @param s real positive number, the s-cale of distances
+#' @param s real positive number, the scale of distances
 #' @param p dimension of ambient space
 #' @param c1 constant for rho_1 function
 #' @param c2 constant for rho_2 function
@@ -156,7 +156,7 @@ weights2=function(dys,s,p,c1,c2)
 #' @param delta positive definite p x p matrix, the estimated covariance of errors
 #' @param c2 constant for rho_2 function
 #' @param k2 constant for rho_2 function
-#' @param ese real positive number, the s-cale of distances
+#' @param ese real positive number, the scale of distances
 #' @param dis vector of distances
 #' @param p dimension of ambient space
 #' @NoRd

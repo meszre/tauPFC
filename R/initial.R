@@ -33,7 +33,7 @@ initial=function(X,Fy,aux,efficiency=0.85)
 #'
 #' @param c1 constant for rho_1 function
 #' @param u vector of distances (positive numbers)
-#' @param s real positive number, the s-cale of distances
+#' @param s real positive number, the scale of distances
 #' @NoRd
 h=function(s,u,c1){mean(rhoc(u/s,c1))-.5 }
 
